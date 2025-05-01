@@ -1,0 +1,40 @@
+﻿@model Pet_ICETask.Models.PetForm
+
+<div class="container mt-4">
+    <h2 class="text-primary">Add Pet Details</h2>
+
+    <form asp-action="AddPetDetails" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="ImageUrl" />
+
+        <!-- Display image preview if ImageUrl exists -->
+        <div class="mb-3 text-center">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" class="img-fluid rounded shadow-sm" style="max-width: 300px;" />
+            }
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Pet.Name" class="form-label">Name</label>
+            <input asp-for="Pet.Name" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Pet.Age" class="form-label">Age</label>
+            <input asp-for="Pet.Age" type="number" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Pet.Breed" class="form-label">Breed</label>
+            <input asp-for="Pet.Breed" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Pet.AdoptionStatus" class="form-label">Adoption Status</label>
+            <select asp-for="Pet.AdoptionStatus" class="form-select">
+                <option>Available</option>
+                <option>Adopted</option>
+                <option>Pending</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save Pet Info</button>
+    </form>
+</div>

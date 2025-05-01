@@ -1,0 +1,52 @@
+﻿@model Pet_ICETask.Models.Pet
+
+@{
+    ViewData["Title"] = "ViewPet";
+}
+
+<h1>ViewPet</h1>
+
+<div>
+    <h4>Pet</h4>
+    <hr />
+    <div class="text-center mb-4">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="Pet Image" style="max-height: 300px; width: auto; object-fit: contain;" />
+        }
+    </div>
+
+	<div class="text-center mb-4">
+        <p class="mt-3 text-info"><strong>Fun Fact:</strong> @ViewBag.FunFact</p>
+    </div>
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Breed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Breed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdoptionStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdoptionStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="ViewAllPets">Back to All Pets</a>
+</div>

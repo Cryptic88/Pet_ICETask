@@ -1,0 +1,19 @@
+﻿@model Pet_ICETask.Models.Pet
+
+<div class="container mt-4">
+    <h2 class="text-success">Meet @Model.Name your random pet of the day!</h2>
+
+    <div class="card shadow-sm mt-3">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" class="card-img-top" style="height: 300px; width: 100%; object-fit: contain;" />
+        }
+        <div class="card-body">
+            <h4 class="card-title">@Model.Name</h4>
+            <p class="card-text"><strong>Breed:</strong> @Model.Breed</p>
+            <p class="card-text"><strong>Age:</strong> @Model.Age</p>
+            <p class="card-text"><strong>Status:</strong> @Model.AdoptionStatus</p>
+            <a asp-action="ViewAllPets" class="btn btn-secondary mt-2">Back to All Pets</a>
+        </div>
+    </div>
+</div>

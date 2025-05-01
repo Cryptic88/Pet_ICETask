@@ -1,0 +1,32 @@
+﻿@model List<Pet_ICETask.Models.Pet>
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-4">All Pets</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var pet in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card @ViewData["Theme"]-card">
+                        <!-- Display pet image -->
+                        @if (!string.IsNullOrEmpty(pet.ImageUrl))
+                        {
+                            <img src="@pet.ImageUrl" class="card-img-top" style="height: 250px; object-fit: cover;" />
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title @ViewData["Theme"]-text">@pet.Name</h5>
+                            <p class="card-text @ViewData["Theme"]-text"><strong>Breed:</strong> @pet.Breed</p>
+                            <a asp-action="ViewPet" asp-route-id="@pet.Id" class="btn @ViewData["Theme"]-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted fst-italic">No pets found in the database.</p>
+    }
+</div>

@@ -1,0 +1,52 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.superhero-theme {
+    --primary-color: #ff595e; /* Red */
+    --secondary-color: #ffca3a; /* Yellow */
+    --accent-color: #1982c4; /* Blue */
+    --background-color: #f4f4f4; /* Light background */
+}
+
+    .superhero-theme body {
+        background-color: #f4f4f4;
+        font-family: 'Bangers', cursive;
+    }
+
+.superhero-card {
+    background-color: #fff;
+    border: 3px solid #ff595e;
+    box-shadow: 0 0 10px #1982c4;
+    transition: 0.3s;
+}
+
+    .superhero-card:hover {
+        transform: rotate(-1deg) scale(1.02);
+    }
+
+.superhero-btn {
+    background-color: #ffca3a;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #1982c4;
+}

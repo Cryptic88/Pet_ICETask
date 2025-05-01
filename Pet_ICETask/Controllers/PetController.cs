@@ -22,6 +22,7 @@ namespace Pet_ICETask.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewData["Theme"] = "superhero-theme";
             var imageUrls = await FetchImageUrlsAsync();
             return View(imageUrls);
         }
@@ -144,7 +145,10 @@ namespace Pet_ICETask.Controllers
                 "Golden Retriever" => "Golden Retrievers are known for their friendly nature and love of water!",
                 "Bulldog" => "Bulldogs were originally bred for bull-baiting.",
                 "Rottweiler" => "Rottweilers were originally Roman drover dogs, used to herd cattle and pull carts!",
-                "Siamese Cat" => "Siamese cats are highly social and vocal, often 'talking' to their owners with a unique voice!"
+                "Siamese Cat" => "Siamese cats are highly social and vocal, often 'talking' to their owners with a unique voice!",
+                "German Sheperd" => "German Shepherds are known for their intelligence and loyalty.",
+                "Macaw" => "Macaws can mimic human speech and live up to 60 years or more—some even outlive their owners!",
+                _ => "This pet is truly one of a kind!",
             };
         }
     }

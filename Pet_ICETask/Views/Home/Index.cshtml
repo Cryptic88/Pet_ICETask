@@ -3,6 +3,28 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4" style="font-family: 'Bangers', cursive; color: #ffca3a; text-shadow: 2px 2px #1982c4;">
+        Welcome to the Pet Heroes HQ!
+    </h1>
+    <p style="font-size: 1.2rem; color: #fff; background-color: #1982c4; padding: 10px; border-radius: 10px; display: inline-block;">
+        Discover your pet's inner superhero and join them on a wild adventure!
+    </p>
+
+    @if (ViewBag.RandomImageUrl != null)
+    {
+        <div class="my-4">
+            <img src="@ViewBag.RandomImageUrl" alt="Random Pet" style="max-width: 300px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);" />
+        </div>
+    }
+    <div class="mt-5 d-flex justify-content-center flex-wrap gap-3">
+        <a class="btn superhero-btn shadow" asp-area="" asp-controller="Pet">
+            <strong>Upload a Pet</strong>
+        </a>
+        <a class="btn superhero-btn shadow" asp-area="" asp-controller="Pet" asp-action="ViewAllPets">
+             <strong>View All Pets</strong>
+        </a>
+        <a class="btn superhero-btn shadow" asp-area="" asp-controller="Pet" asp-action="RandomPet">
+             <strong>Random Pet</strong>
+        </a>
+    </div>
 </div>

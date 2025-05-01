@@ -6,8 +6,9 @@
     <title>@ViewData["Title"] - Pet_ICETask</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Pet_ICETask.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/Pet_ICETask.styles.css" asp-append-version="true" />
+    
 </head>
 <body class="@ViewData["Theme"]">   
     <header>
@@ -24,10 +25,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="ViewAllPets">View All Pets</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pet">Upload a Pet</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pet" >Upload a Pet</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="ViewAllPets">View All Pets</a>
                         </li>
 						<li class="nav-item">
 							<a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="RandomPet">Random Pet</a>
@@ -41,12 +42,6 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Pet_ICETask - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

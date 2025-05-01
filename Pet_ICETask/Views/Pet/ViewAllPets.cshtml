@@ -1,7 +1,9 @@
 ﻿@model List<Pet_ICETask.Models.Pet>
 
-<div class="container mt-4">
-    <h2 class="text-primary mb-4">All Pets</h2>
+<div class="text-center my-4">
+    <h1 class="display-4 superhero-title"> All Pets Assembled! </h1>
+    <p class="lead text-success">Meet our heroic furry (and not-so-furry) companions</p>
+
 
     @if (Model != null && Model.Any())
     {
@@ -18,7 +20,7 @@
                         <div class="card-body">
                             <h5 class="card-title @ViewData["Theme"]-text">@pet.Name</h5>
                             <p class="card-text @ViewData["Theme"]-text"><strong>Breed:</strong> @pet.Breed</p>
-                            <a asp-action="ViewPet" asp-route-id="@pet.Id" class="btn @ViewData["Theme"]-btn">View Details</a>
+                            <a asp-action="ViewPet" asp-route-id="@pet.Id" class="btn superhero-btn">View Details</a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,8 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" >
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -17,21 +20,26 @@ html {
   min-height: 100%;
 }
 
+.footer {
+    position: relative; 
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    margin-top: 50px; 
+}
+
 body {
-  margin-bottom: 60px;
+    background-color: #ADD8E6; /* Navy Blue */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.superhero-theme {
-    --primary-color: #ff595e; /* Red */
-    --secondary-color: #ffca3a; /* Yellow */
-    --accent-color: #1982c4; /* Blue */
-    --background-color: #f4f4f4; /* Light background */
+.superhero-theme body {
+     
+    font-family: 'Bangers', cursive; 
 }
-
-    .superhero-theme body {
-        background-color: #f4f4f4;
-        font-family: 'Bangers', cursive;
-    }
 
 .superhero-card {
     background-color: #fff;
@@ -40,13 +48,35 @@ body {
     transition: 0.3s;
 }
 
-    .superhero-card:hover {
-        transform: rotate(-1deg) scale(1.02);
-    }
 
 .superhero-btn {
-    background-color: #ffca3a;
-    color: black;
+    background: linear-gradient(135deg, #ff595e, #ffca3a);
+    color: #000;
     font-weight: bold;
     border: 2px solid #1982c4;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+    .superhero-btn:hover {
+        background: linear-gradient(135deg, #ffca3a, #ff595e);
+        transform: scale(1.05) rotate(-1deg);
+        box-shadow: 0 8px 20px rgba(25, 130, 196, 0.5);
+    }
+
+.superhero-name {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    color: #ff595e;
+    text-shadow: 2px 2px #1982c4;
+}
+
+.superhero-title {
+    font-family: 'Bangers', cursive;
+    color: #ffca3a;
+    text-shadow: 2px 2px #1982c4;
+    letter-spacing: 1px;
 }

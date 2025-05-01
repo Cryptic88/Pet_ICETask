@@ -1,19 +1,18 @@
 ﻿@model Pet_ICETask.Models.Pet
 
-<div class="container mt-4">
-    <h2 class="text-success">Meet @Model.Name your random pet of the day!</h2>
+<div class="text-center my-4">
+    <h1 class="display-4 superhero-title"> Random Pet Hero!</h1>
+    <p class="lead text-success">Your surprise sidekick has arrived!</p>
 
-    <div class="card shadow-sm mt-3">
-        @if (!string.IsNullOrEmpty(Model.ImageUrl))
-        {
-            <img src="@Model.ImageUrl" class="card-img-top" style="height: 300px; width: 100%; object-fit: contain;" />
-        }
-        <div class="card-body">
-            <h4 class="card-title">@Model.Name</h4>
-            <p class="card-text"><strong>Breed:</strong> @Model.Breed</p>
-            <p class="card-text"><strong>Age:</strong> @Model.Age</p>
-            <p class="card-text"><strong>Status:</strong> @Model.AdoptionStatus</p>
-            <a asp-action="ViewAllPets" class="btn btn-secondary mt-2">Back to All Pets</a>
+    <div class="card mx-auto superhero-card" style="max-width: 600px;">
+        <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Name" style="height: 400px; object-fit: cover;">
+        <div class="card-body text-center">
+            <h3 class="card-title">@Model.Name</h3>
+            <p class="card-text">Breed: @Model.Breed</p>
+            <p class="card-text">Age: @Model.Age</p>
+            <p class="card-text">Adoption Status: @Model.AdoptionStatus</p>
+            <p class="mt-3 text-info"><strong>Every Hero Has a Tail</strong></p>
+            <a class="btn superhero-btn mt-3" asp-action="RandomPet">Get Another Hero</a>
         </div>
     </div>
 </div>
